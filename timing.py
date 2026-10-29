@@ -27,3 +27,36 @@ for N in [10, 100, 1000, 10000, 100000, 1000000]:
 
     data.append([N, t1, t2, t3, t4])
     print([N, t1, t2, t3, t4])
+
+print("M = N")
+
+data2 = []
+
+for N in [100, 1000, 10000, 100000, 300000]:
+    m = range(0, 2 * N, 2)
+    n = range(1, 2 * N, 2)
+
+    t1 = times(pointers, m, n)
+    t2 = times(bin_s, m, n)
+    t3 = times(point_2, m, n)
+    t4 = times(binar2, m, n)
+
+    data2.append([N, t1, t2, t3, t4])
+    print([N, t1, t2, t3, t4])
+
+print("N = 1000000, разные M")
+
+data3 = []
+
+for M in [10, 50, 100, 1000, 10000, 100000]:
+    N = 1000000
+    m = range(0, 2 * N, 2 * (N // M))
+    n = range(1, 2 * N, 2)
+
+    t1 = times(pointers, m, n)
+    t2 = times(bin_s, m, n)
+    t3 = times(point_2, m, n)
+    t4 = times(binar2, m, n)
+
+    data3.append([M, t1, t2, t3, t4])
+    print([M, t1, t2, t3, t4])
